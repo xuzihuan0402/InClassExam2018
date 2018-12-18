@@ -1,25 +1,19 @@
 package com.exam;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
-	String origin;
-	String destination;
-	int price;
-	int quantity;
-	ArrayList bag = new ArrayList();
-	
-	public Order() {
-		Ticket n = new Ticket();
-		bag.add(n);
-		
-		
+	List<Ticket> tickets =new ArrayList<Ticket>();
+	public void add(Ticket ticket) {
+		tickets.add(ticket);
 	}
-	
-	
-	
-	public void print(){
-		System.out.println();
+
+	public void print() {
+		for(Ticket ticket : tickets) {
+			System.out.println(ticket.origin+" "+ ticket.destination+" "+ticket.price+"  "+ ticket.quantity+"  "+ticket.price*ticket.quantity);
+		}
+		
 	}
 	
 
